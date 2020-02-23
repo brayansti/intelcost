@@ -13,8 +13,14 @@
     <div class="container mt40">
       <div class="row">
         <!-- Repeat Here -->
-        <div class="col-md-4">
-          <item-box></item-box>
+        <div class="col-md-4" v-for="(hit, $index) in dataFromAPI.hits" :key="$index">
+          <item-box
+            :likes=hit.likes
+            :userImageURL=hit.userImageURL
+            :user=hit.user
+            :views=hit.views
+            :webformatURL=hit.webformatURL
+          ></item-box>
         </div>
       </div>
     </div>
@@ -24,10 +30,12 @@
 </template>
 
 <script>
-// import axios from 'axios';
+import axios from 'axios';
 import itemBox from "./components/itemBox"
 
-// const api = 'https://pixabay.com/api/?key=13119377-fc7e10c6305a7de49da6ecb25'
+const apiData = {
+  url : 'https://pixabay.com/api/?key=13119377-fc7e10c6305a7de49da6ecb25',
+}
 
 export default {
   name: 'app',
@@ -36,9 +44,8 @@ export default {
   },
   data() {
     return {
-      page: 1,
-      list: [],
       newsSearch: '',
+      dataFromAPI: [],
     };
   },
   methods: {
@@ -46,7 +53,15 @@ export default {
       console.log('Changed')
     },
   },
-
+  mounted: function(){
+    // ↓↓↓ On mounted load default post ↓↓↓
+    axios
+        .get(apiData.url)
+        .then(response => {
+          this.dataFromAPI = response.data
+        })
+        .catch(error => console.log(error))
+  }
   // computed:{
   //   number: function(){
   //     return parseInt(this.test)

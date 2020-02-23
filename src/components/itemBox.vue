@@ -3,19 +3,19 @@
     <div class="itemBox__container">
       <div class="itemBox__divider itemBox__divider--top">
         <figure class="itemBox__image">
-          <img src="" alt="default">
+          <img :src="userImageURL" alt="default">
         </figure>
         <div class="itemBox__credits">
-          100 credits
+          Likes: {{likes}}
         </div>
       </div>
-      <div class="itemBox__divider itemBox__divider--bottom" style="background-image: url(https://mytablemesa.com/Content/uploads/684a5f05-af87-438e-b32a-82bf7e92e729.png)">
+      <div class="itemBox__divider itemBox__divider--bottom" v-bind:style="{ 'background-image': 'url(' + webformatURL + ')' }">
         <div>
           <h2 class="itemBox__title">
-            item.author
+            {{user}}
           </h2>
           <p class="itemBox__description">
-            item.title
+            {{views}}
           </p>
         </div>
         <div class="d-flex justify-content-between">
@@ -35,7 +35,28 @@
 export default {
   name: 'item-box',
   props: {
-    msg: String
+    id: Number,
+    pageURL: String,
+    type: String,
+    tags: String,
+    previewURL: String,
+    previewWidth: Number,
+    previewHeight: Number,
+    webformatURL: String,
+    webformatWidth: Number,
+    webformatHeight: Number,
+    largeImageURL: String,
+    imageWidth: Number,
+    imageHeight: Number,
+    imageSize: Number,
+    views: Number,
+    downloads: Number,
+    favorites: Number,
+    likes: Number,
+    comments: Number,
+    user_id: Number,
+    user: String,
+    userImageURL: String
   }
 }
 </script>
