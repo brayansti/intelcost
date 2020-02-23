@@ -1,0 +1,122 @@
+.itemBox{
+  display: block;
+  margin: 15px 0;
+  &__title{
+    color: $black;
+    font-weight: bold;
+    @include fontSize(14);
+  }
+  &__price{
+    color: $blue-3;
+    font-weight: bold;
+    @include fontSize(16);
+  }
+  &__description{
+    margin-top: 5px;
+    color: $gray-text;
+  }
+  &__container{
+    box-shadow: 0px 0px 0px 2px $gray-border;
+  }
+  &__divider{
+    padding: 0 20px;
+    &--top{
+      height: 50px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: $gray-bg;
+      box-shadow: 0px 0px 0px 2px $gray-border;
+    }
+    &--bottom{
+      padding-top: 40px;
+      padding-bottom: 20px;
+      height: 220px;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: space-between;
+      >div{
+        width: 100%;
+      }
+    }
+  }
+  &__image{
+    top: 10px;
+    left: 20px;
+    position: absolute;
+    width: 60px;
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
+  &__credits{
+    padding: 10px;
+    background: $white;
+    border-radius: 10px;
+    letter-spacing: .6px;
+    @include fontSize(12);
+  }
+}
+
+.searchBox{
+  margin-top: 10px;
+  position: relative;
+  &::after{
+    content: "";
+    width: 18px;
+    height: 18px;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    margin: auto;
+    background-image: url(./assets/icons/baseline_search_black_18dp.png);
+    position: absolute;
+  }
+  input{
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+    border: none;
+    padding-left: 35px;
+    border-bottom: 1px solid $gray-border;
+  }
+}
+
+.bannerBox{
+  position: relative;
+  &__logo{
+    left: 0;
+    right: 0;
+    top: 30px;
+    width: 125px;
+    margin: auto;
+    display: block;
+    position: absolute;
+    img{
+      width: 100%;
+      display: block;
+    }
+  }
+  &__image{
+    height: 300px;
+    background-attachment: fixed;
+    background-size: cover;
+    // background-image: url('https://i.picsum.photos/id/10/1920/720.jpg');
+    background-image: url('./assets/bg2.jpg');
+    // img{
+    //   display: block;
+    // }
+  }
+  &__search{
+    width: 90%;
+    bottom: 20px;
+    min-width: 200px;
+    max-width: 550px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+  }
+}
