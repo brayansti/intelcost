@@ -35,11 +35,14 @@
         <!-- Repeat Here -->
         <div class="col-md-4" v-for="(hit, $index) in dataFromAPI.hits" :key="$index">
           <item-box
+            :pageURL=hit.pageURL
             :likes=hit.likes
             :userImageURL=hit.userImageURL
             :user=hit.user
             :views=hit.views
             :webformatURL=hit.webformatURL
+            :comments=hit.comments
+            :id=hit.id
           ></item-box>
         </div>
       </div>

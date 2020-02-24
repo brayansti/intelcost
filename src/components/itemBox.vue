@@ -1,5 +1,5 @@
 <template>
-  <a target="_blank" href="#" class="itemBox">
+  <a target="_blank" :href="pageURL" class="itemBox">
     <div class="itemBox__container">
       <div class="itemBox__divider itemBox__divider--top">
         <figure class="itemBox__image">
@@ -10,21 +10,26 @@
         </div>
       </div>
       <div class="itemBox__divider itemBox__divider--bottom" v-bind:style="{ 'background-image': 'url(' + webformatURL + ')' }">
-        <div>
-          <h2 class="itemBox__title">
-            Likes: {{likes}}
-          </h2>
-          <p class="itemBox__description">
-            {{views}}
-          </p>
-        </div>
         <div class="d-flex justify-content-between">
           <div>
-            <h2 class="itemBox__title itemBox__price">
-              <!-- $14.15 -->
-              item.objectID
+            <h2 class="itemBox__title">
+              ID: {{id}}
             </h2>
           </div>
+          <p>
+            {{comments}}
+            <font-awesome-icon icon="comment" />
+          </p>
+        </div>
+      </div>
+      <div class="itemBox__divider">
+        <div class="pt10 pb10">
+          <h2 class="itemBox__title">
+            Likes: {{likes}}  
+          </h2>
+          <p class="itemBox__description">
+            Vistas: {{views}}
+          </p>
         </div>
       </div>
     </div>
