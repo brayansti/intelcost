@@ -6,13 +6,13 @@
           <img :src="userImageURL" alt="default">
         </figure>
         <div class="itemBox__credits">
-          Likes: {{likes}}
+          {{user}}
         </div>
       </div>
       <div class="itemBox__divider itemBox__divider--bottom" v-bind:style="{ 'background-image': 'url(' + webformatURL + ')' }">
         <div>
           <h2 class="itemBox__title">
-            {{user}}
+            Likes: {{likes}}
           </h2>
           <p class="itemBox__description">
             {{views}}
