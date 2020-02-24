@@ -116,21 +116,19 @@ export default {
       .then(response =>{
         this.dataFromAPI = response.data
       })
-      .catch(error => console.log(error))
+      // .catch(error => console.log(error))
     },
     changeInput() {
-      console.log('Changed')
     },
   },
   mounted: function(){
-    console.log(`${apiData.url}?key=${apiData.key}&lang=${apiData.lang}`);
     // ↓↓↓ On mounted load default post ↓↓↓
     axios
         .get(`${apiData.url}?key=${apiData.key}&lang=${apiData.lang}`)
         .then(response => {
           this.dataFromAPI = response.data
         })
-        .catch(error => console.log(error))
+        // .catch(error => console.log(error))
   }
   // computed:{
   //   number: function(){
